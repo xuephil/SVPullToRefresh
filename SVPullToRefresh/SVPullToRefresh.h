@@ -8,6 +8,13 @@
 // https://github.com/samvermette/SVPullToRefresh
 //
 
+#import <UIKit/UIKit.h>
+
+//! Project version number for SVPullToRefresh.
+FOUNDATION_EXPORT double SVPullToRefreshVersionNumber;
+
+//! Project version string for SVPullToRefresh.
+FOUNDATION_EXPORT const unsigned char SVPullToRefreshVersionString[];
 // this header file is provided for backwards compatibility and will be removed in the future
 // here's how you should import SVPullToRefresh now:
 
