@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DC983FE31C48CE5A006AB228 /* SVPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = DC983FE21C48CE5A006AB228 /* SVPullToRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC983FEE1C48CF20006AB228 /* UIScrollView+SVInfiniteScrolling.h in Headers */ = {isa = PBXBuildFile; fileRef = DC983FEA1C48CF20006AB228 /* UIScrollView+SVInfiniteScrolling.h */; };
+		DC983FEE1C48CF20006AB228 /* UIScrollView+SVInfiniteScrolling.h in Headers */ = {isa = PBXBuildFile; fileRef = DC983FEA1C48CF20006AB228 /* UIScrollView+SVInfiniteScrolling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC983FEF1C48CF20006AB228 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = DC983FEB1C48CF20006AB228 /* UIScrollView+SVInfiniteScrolling.m */; };
-		DC983FF01C48CF20006AB228 /* UIScrollView+SVPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = DC983FEC1C48CF20006AB228 /* UIScrollView+SVPullToRefresh.h */; };
+		DC983FF01C48CF20006AB228 /* UIScrollView+SVPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = DC983FEC1C48CF20006AB228 /* UIScrollView+SVPullToRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC983FF11C48CF20006AB228 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = DC983FED1C48CF20006AB228 /* UIScrollView+SVPullToRefresh.m */; };
 /* End PBXBuildFile section */
 

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DC983FDE1C48CE5A006AB228"
-               BuildableName = "SVPullToRefresh iOS.framework"
+               BuildableName = "SVPullToRefresh.framework"
                BlueprintName = "SVPullToRefresh iOS"
                ReferencedContainer = "container:SVPullToRefresh.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DC983FDE1C48CE5A006AB228"
-            BuildableName = "SVPullToRefresh iOS.framework"
+            BuildableName = "SVPullToRefresh.framework"
             BlueprintName = "SVPullToRefresh iOS"
             ReferencedContainer = "container:SVPullToRefresh.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DC983FDE1C48CE5A006AB228"
-            BuildableName = "SVPullToRefresh iOS.framework"
+            BuildableName = "SVPullToRefresh.framework"
             BlueprintName = "SVPullToRefresh iOS"
             ReferencedContainer = "container:SVPullToRefresh.xcodeproj">
          </BuildableReference>
