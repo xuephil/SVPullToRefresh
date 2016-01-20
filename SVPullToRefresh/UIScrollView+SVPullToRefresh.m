@@ -170,19 +170,41 @@ static char UIScrollViewPullToRefreshView;
 @synthesize dateLabel = _dateLabel;
 
 
++ (instancetype)appearance {
+    static SVPullToRefreshView *appearance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        appearance = [[self alloc] initForAppearance];
+        appearance.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+        appearance.textColor = [UIColor darkGrayColor];
+        appearance.arrowColor = [UIColor grayColor];
+    });
+    return appearance;
+}
+
+- (id)initForAppearance {
+    self = [super initWithFrame:CGRectZero];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame {
     if(self = [super initWithFrame:frame]) {
         
         // default styling values
-        self.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-        self.textColor = [UIColor darkGrayColor];
+        self.activityIndicatorViewStyle = [SVPullToRefreshView appearance].activityIndicatorViewStyle;
+        self.activityIndicatorViewColor = [SVPullToRefreshView appearance].activityIndicatorViewColor;
+        self.textColor = [SVPullToRefreshView appearance].textColor;
+        self.arrowColor = [SVPullToRefreshView appearance].arrowColor;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.state = SVPullToRefreshStateStopped;
         self.showsDateLabel = NO;
         
-        self.titles = [NSMutableArray arrayWithObjects:NSLocalizedString(@"Pull to refresh...",),
-                             NSLocalizedString(@"Release to refresh...",),
-                             NSLocalizedString(@"Loading...",),
+        self.titles = [NSMutableArray arrayWithObjects:NSLocalizedString(@"下拉可以刷新...",),
+                             NSLocalizedString(@"松开即可刷新...",),
+                             NSLocalizedString(@"载入中...",),
                                 nil];
         
         self.subtitles = [NSMutableArray arrayWithObjects:@"", @"", @"", @"", nil];
@@ -280,15 +302,16 @@ static char UIScrollViewPullToRefreshView;
         NSString *subtitle = [self.subtitles objectAtIndex:self.state];
         self.subtitleLabel.text = subtitle.length > 0 ? subtitle : nil;
         
+        CGSize titleSize = [self.titleLabel.text boundingRectWithSize:CGSizeMake(labelMaxWidth,self.titleLabel.font.lineHeight) options:0 attributes:@{NSFontAttributeName: self.titleLabel.font} context:nil].size;
+//        CGSize titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font
+//                                            constrainedToSize:CGSizeMake(labelMaxWidth,self.titleLabel.font.lineHeight)
+//                                                lineBreakMode:self.titleLabel.lineBreakMode];
         
-        CGSize titleSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font
-                                            constrainedToSize:CGSizeMake(labelMaxWidth,self.titleLabel.font.lineHeight)
-                                                lineBreakMode:self.titleLabel.lineBreakMode];
         
-        
-        CGSize subtitleSize = [self.subtitleLabel.text sizeWithFont:self.subtitleLabel.font
-                                                  constrainedToSize:CGSizeMake(labelMaxWidth,self.subtitleLabel.font.lineHeight)
-                                                      lineBreakMode:self.subtitleLabel.lineBreakMode];
+        CGSize subtitleSize = [self.subtitleLabel.text boundingRectWithSize:CGSizeMake(labelMaxWidth,self.subtitleLabel.font.lineHeight) options:0 attributes:@{NSFontAttributeName: self.subtitleLabel.font} context:nil].size;
+//        CGSize subtitleSize = [self.subtitleLabel.text sizeWithFont:self.subtitleLabel.font
+//                                                  constrainedToSize:CGSizeMake(labelMaxWidth,self.subtitleLabel.font.lineHeight)
+//                                                      lineBreakMode:self.subtitleLabel.lineBreakMode];
         
         CGFloat maxLabelWidth = MAX(titleSize.width,subtitleSize.width);
         

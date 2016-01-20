@@ -39,12 +39,14 @@ typedef NS_ENUM(NSUInteger, SVPullToRefreshState) {
 
 @interface SVPullToRefreshView : UIView
 
-@property (nonatomic, strong) UIColor *arrowColor;
-@property (nonatomic, strong) UIColor *textColor;
++ (instancetype)appearance;
+
+@property (nonatomic, strong) UIColor *arrowColor UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIColor *textColor UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
 @property (nonatomic, strong, readonly) UILabel *subtitleLabel;
-@property (nonatomic, strong, readwrite) UIColor *activityIndicatorViewColor NS_AVAILABLE_IOS(5_0);
-@property (nonatomic, readwrite) UIActivityIndicatorViewStyle activityIndicatorViewStyle;
+@property (nonatomic, strong, readwrite) UIColor *activityIndicatorViewColor NS_AVAILABLE_IOS(5_0) UI_APPEARANCE_SELECTOR;
+@property (nonatomic, readwrite) UIActivityIndicatorViewStyle activityIndicatorViewStyle UI_APPEARANCE_SELECTOR;
 
 @property (nonatomic, readonly) SVPullToRefreshState state;
 @property (nonatomic, readonly) SVPullToRefreshPosition position;
